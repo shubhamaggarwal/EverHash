@@ -1,0 +1,27 @@
+{
+  "name": "EverHash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamaggarwal/EverHash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhamaggarwal/EverHash/issues"
+  },
+  "homepage": "https://github.com/shubhamaggarwal/EverHash#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
