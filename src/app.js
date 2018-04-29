@@ -43,7 +43,6 @@ function initAgreementContract () {
 
 
 function deployAgreement(userHash) {
-
   var deployAddress = web3.eth.accounts[0];
   AgreementContract.new(userHash, {from: deployAddress}).then(function(result){
     contractAdress = result.address;
@@ -51,22 +50,6 @@ function deployAgreement(userHash) {
   }).catch(function(err){
     console.log(err);
   });
-  // ContractABI.new(userHash, {
-  //  from: deployAddress,
-  //  data: bytecode,
-  // }, 
-  // function (e, contract) {
-  //     document.getElementById('response').innerHTML = 'Waiting for contract to be mined.';
-  //     console.log(e, contract);
-  //     if (!e && typeof contract.address !== 'undefined') {
-  //        contractAdress = contract.address;
-  //        console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash)
-  //        document.getElementById('response').innerHTML = 'New Contract at: ' + contract.address
-  //     }
-  // });
-  // console.log(ContractABI.address);
-
-
 }
 
 function getHash() {
@@ -78,13 +61,4 @@ function getHash() {
   }).catch( function(err){
     console.log(err.message);
   });
-  // AgreementContract.deployed().then(function(instance){
-  //   return instance._hash.call();
-  // }).then(function(result){
-  //   if(result != ""){
-  //     $("#response").text(result);
-  //   }
-  // }).catch(function(err){
-  //   console.log(err.message);
-  // });
 }
