@@ -1,9 +1,7 @@
 var web3Provider = null;
 var AgreementContract;
-var bytecode;
 const nullAddress = "0x0000000000000000000000000000000000000000";
 var contractAdress;
-var contractABI;
 
 $(function() {
   $(window).load(function() {
@@ -47,6 +45,7 @@ function deployAgreement(userHash) {
   AgreementContract.new(userHash, {from: deployAddress}).then(function(result){
     contractAdress = result.address;
     console.log(result);
+    $("#response").text(result.address);
   }).catch(function(err){
     console.log(err);
   });
