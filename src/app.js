@@ -45,18 +45,18 @@ function deployAgreement(userHash) {
   AgreementContract.new(userHash, {from: deployAddress}).then(function(result){
     contractAdress = result.address;
     console.log(result);
-    $("#response").text(result.address);
+    $("#response1").text("Address of the deployed contract is "+result.address);
   }).catch(function(err){
     console.log(err);
   });
 }
 
-function getHash() {
-  AgreementContract.at(contractAdress).then(function(instance){
+function getHash(cAddress) {
+  AgreementContract.at(cAddress).then(function(instance){
     console.log(instance);
     return instance.getHash();
   }).then(function(result){
-    $("#response").text(result);
+    $("#response2").text("Hash value stored earlier was: \""+result+"\"");
   }).catch( function(err){
     console.log(err.message);
   });
