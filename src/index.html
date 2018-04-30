@@ -1,25 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>EverHash</title>
-</head>
-<body>
-<h1 class="text-center">EverHash</h1>
-<hr/>
-<!-- ... -->
-<input value="click here" type="button" onclick="deployAgreement('Sample hash data')">
-
-<input value="Get Hash" type="button" onclick="getHash()">
-
-<div id="response"></div>
-<!-- JQuery will help us extract data from json files -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Web3.js will help us interact with the deployed smart contract -->
-<script src="JShelpers/web3.min.js"></script>
-<!-- Truffle contract will our life easier when interacting with smart contracts -->
-<script src="JShelpers/truffle-contract.js"></script>
-<!-- app.js is where we will write our JS logic -->
-<script src="app.js"></script>
-</body>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <body>
+    <div class="well text-success" style="background: aliceblue;font-family: -webkit-pictograph;text-align: -webkit-center">
+      <h1>EverHash</h1>
+    </div>
+    <div class="row">
+      <form class="form-horizontal text-info" role="form">
+        <div class="form-group">
+          <label for="hash_value" class="col-lg-2 control-label">Hash Value:</label>
+          <div class="col-lg-5">
+            <input type="text" class="form-control" id="hash_value">
+          </div>
+          <button type="button" class="btn btn-info col-lg-2" onclick="deployAgreement(document.getElementById('hash_value').value)">Get Contract Address</button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div id="response1" class="alert alert-info col-lg-7"></div>
+    </div>
+    <br><br><br><br>
+    
+    <div class="row">
+      <form class="form-horizontal text-info" role="form">
+        <div class="form-group">
+          <label for="contract_address" class="col-lg-2 control-label">Contract Adress:</label>
+          <div class="col-lg-5">
+            <input type="text" class="form-control" id="contract_address">
+          </div>
+          <button type="button" class="btn btn-info col-lg-2" onclick="getHash(document.getElementById('contract_address').value)">Get Hash Value</button>
+        </div>
+      </form>
+    </div>  
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div id="response2" class="alert alert-info col-lg-7"></div>
+    </div>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Web3.js will help us interact with the deployed smart contract -->
+      <script src="JShelpers/web3.min.js"></script>
+      <!-- Truffle contract will our life easier when interacting with smart contracts -->
+      <script src="JShelpers/truffle-contract.js"></script>
+      <!-- app.js is where we will write our JS logic -->
+      <script src="app.js"></script>
+  </body>
+  
 </html>
